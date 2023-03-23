@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EasyBankApplication<easy-bank>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "tech.edev404.easybank.EasyBankApplication",
+            "projectName": "easy-bank",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
