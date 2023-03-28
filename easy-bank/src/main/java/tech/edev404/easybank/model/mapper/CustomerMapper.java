@@ -20,6 +20,7 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto>{
         .email(dto.getEmail())
         .password(passwordEncoder.encode(dto.getPassword()))
         .authority(RoleEnum.valueOf(dto.getAuthority()))
+        .mobileNumber(dto.getMobileNumber())
         .enabled(false)
         .accountNonLocked(true)
         .credentialsNonExpired(true)
@@ -32,6 +33,7 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto>{
         return CustomerDto.builder()
         .email(pojo.getEmail())
         .password("")
+        .mobileNumber(pojo.getMobileNumber())
         .authority(pojo.getAuthority().toString())
         .build();
     }

@@ -34,7 +34,7 @@ public class LoginController {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("email unavailable");
         }
         Customer customer = customerMapper.dtoToPojo(customerDto);
-        if (customer.getAuthority().equals(RoleEnum.ADMINISTRATOR)) {
+        if (customer.getAuthority().equals(RoleEnum.admin)) {
             customer.setEnabled(false);
         }
         try{
