@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class AccountController {
 
     @GetMapping
-    public String handleGetAccountDetails(){
-        return "Here are the account details";
+    public String handleGetAccountDetails() {
+      return "";
     }
     
 }

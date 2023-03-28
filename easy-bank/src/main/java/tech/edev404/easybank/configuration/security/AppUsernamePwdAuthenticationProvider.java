@@ -32,8 +32,13 @@ public class AppUsernamePwdAuthenticationProvider implements AuthenticationProvi
         try {
             UserDetails user = userDetailsManager.loadUserByUsername(username);
             if (passwordEncoder.matches(password, user.getPassword())) {
-                List<GrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(user.getAuthorities().stream().findFirst().get().toString()));
-                return new UsernamePasswordAuthenticationToken(username, password, authorities);
+              List<GrantedAuthority> authorities = List
+                  .of(new SimpleGrantedAuthority(user.getAuthorities().stream().findFirst().get().toString()));
+                if(user.isEnabled()){
+                  return new UsernamePasswordAuthenticationToken(username, password, authorities);
+                } else {
+                  throw new UsernameNotFoundException("");
+                }
             } else {
                 throw new BadCredentialsException("Bad credentials");
             }

@@ -18,6 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tech.edev404.easybank.model.entity.enums.RoleEnum;
 
 @Data
 @Builder
@@ -29,12 +30,13 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
     private Integer id;
     @Column(unique = true, nullable = false, length = 100)
     private String email;
     @Column(nullable = false)
     private String password;
-    @Column(unique = true, nullable = false, length = 15)
+    @Column(name = "mobile_number", unique = true, nullable = false, length = 15)
     private String mobileNumber;
     @ColumnDefault(value = "true")
     private Boolean enabled;
@@ -46,7 +48,7 @@ public class Customer {
     private Boolean accountNonExpired;
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-	private RoleEnum authority;
+	  private RoleEnum authority;
     @CreationTimestamp
     private LocalDateTime creationDateTime;
     @UpdateTimestamp

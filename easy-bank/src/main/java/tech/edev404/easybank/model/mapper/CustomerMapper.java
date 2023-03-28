@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import tech.edev404.easybank.model.dto.CustomerDto;
 import tech.edev404.easybank.model.entity.Customer;
-import tech.edev404.easybank.model.entity.RoleEnum;
+import tech.edev404.easybank.model.entity.enums.RoleEnum;
 
 @Service
 @RequiredArgsConstructor
