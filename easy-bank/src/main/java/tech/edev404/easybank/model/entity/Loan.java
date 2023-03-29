@@ -2,7 +2,6 @@ package tech.edev404.easybank.model.entity;
 
 import java.util.Date;
 
-import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,34 +19,33 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="cards")
-public class Cards {
+@Table(name="loans")
+public class Loan {
 
   @Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Column(name = "card_id")
-	private Integer cardId;
-
+	@Column(name = "loan_number")
+	private Integer loanNumber;
+	
 	@Column(name = "customer_id")
 	private Integer customerId;
-
-	@Column(name = "card_number")
-	private String cardNumber;
-
-	@Column(name = "card_type")
-	private String cardType;
-
-	@Column(name = "total_limit")
-	private Integer totalLimit;
-
-	@Column(name = "amount_used")
-	private Integer amountUsed;
-
-	@Column(name = "available_amount")
-	private Integer availableAmount;
-
-    @Column(name = "create_dt")
-  @CreationTimestamp
-	private Date createDt;
-
+	
+	@Column(name="start_dt")
+	private Date startDt;
+	
+	@Column(name = "loan_type")
+	private String loanType;
+	
+	@Column(name = "total_loan")
+	private Integer totalLoan;
+	
+	@Column(name = "amount_paid")
+	private Integer amountPaid;
+	
+	@Column(name = "outstanding_amount")
+	private Integer outstandingAmount;
+	
+	@Column(name = "create_dt")
+    private String createDt;
+  
 }
