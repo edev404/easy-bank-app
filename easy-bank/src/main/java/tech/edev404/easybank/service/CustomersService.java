@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import tech.edev404.easybank.model.entity.Customer;
 
-public interface CustomerService {
+public interface CustomersService {
     
     Optional<Customer> findByEmail(String email);
 
