@@ -13,14 +13,14 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import tech.edev404.easybank.model.entity.Customer;
-import tech.edev404.easybank.service.CustomerService;
+import tech.edev404.easybank.service.CustomersService;
 
 @Service
 @RequiredArgsConstructor
 public class AppUserDetailsManager implements UserDetailsManager {
 
 
-    private final CustomerService customerService;
+    private final CustomersService customerService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

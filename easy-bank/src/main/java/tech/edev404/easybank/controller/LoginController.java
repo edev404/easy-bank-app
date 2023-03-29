@@ -16,7 +16,7 @@ import tech.edev404.easybank.model.dto.CustomerDto;
 import tech.edev404.easybank.model.entity.Customer;
 import tech.edev404.easybank.model.entity.enums.RoleEnum;
 import tech.edev404.easybank.model.mapper.CustomerMapper;
-import tech.edev404.easybank.service.CustomerService;
+import tech.edev404.easybank.service.CustomersService;
 
 @RestController
 @RequestMapping("api/v1/")
@@ -24,7 +24,7 @@ import tech.edev404.easybank.service.CustomerService;
 @RequiredArgsConstructor
 public class LoginController {
 
-    private final CustomerService customerService;
+    private final CustomersService customerService;
     private final CustomerMapper customerMapper;
 
     @PostMapping("sign-up")
