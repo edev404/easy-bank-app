@@ -7,15 +7,15 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import tech.edev404.easybank.model.entity.Customer;
-import tech.edev404.easybank.repository.CustomerRepository;
-import tech.edev404.easybank.service.CustomerService;
+import tech.edev404.easybank.repository.CustomersRepository;
+import tech.edev404.easybank.service.CustomersService;
 
 @Service
 @Primary
 @RequiredArgsConstructor
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerServiceImpl implements CustomersService {
 
-    private final CustomerRepository customerRepository;
+    private final CustomersRepository customerRepository;
 
     @Override
     public Optional<Customer> findByEmail(String email) {
