@@ -37,7 +37,7 @@ public class AppUsernamePwdAuthenticationProvider implements AuthenticationProvi
                 if(user.isEnabled()){
                   return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } else {
-                  throw new UsernameNotFoundException("");
+                  throw new UsernameNotFoundException("Account is disabled");
                 }
             } else {
                 throw new BadCredentialsException("Bad credentials");

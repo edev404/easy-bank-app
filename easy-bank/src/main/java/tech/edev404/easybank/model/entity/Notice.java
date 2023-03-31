@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="account_transactions")
+@Table(name="notice_details")
 public class Notice {
 
   @Id

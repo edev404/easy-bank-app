@@ -1,7 +1,6 @@
 package tech.edev404.easybank.model.dto;
 
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -22,27 +21,26 @@ import lombok.NoArgsConstructor;
 public class CustomerDto {
 
     @JsonProperty(value = "id", required = false) 
-    @JsonAlias("customerId")
     @Null
     private Integer id;
 
     @JsonProperty(value = "email", required = true)
-    @JsonAlias("username")
     @NotEmpty @Email
     private String email;
 
-    @JsonProperty(value = "password", required = true) 
-    @JsonAlias("pwd")
+    @JsonProperty(value = "password", required = true)
     @NotBlank
     private String password;
 	
     @JsonProperty(value = "mobileNumber", required = true)
-    @JsonAlias("phone")
     @NotEmpty
     private String mobileNumber;
 
-    @JsonProperty(value = "authority", required = true)
-    @JsonAlias("role") 
-    private String authority;
+    @JsonProperty(value = "role", required = true)
+    private String role;
+
+    @JsonProperty(value = "createDt", required = false)
+    @Null
+    private String createDt;
 
 }

@@ -4,8 +4,9 @@ import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +21,19 @@ import tech.edev404.easybank.service.CustomersService;
 
 @RestController
 @RequestMapping("api/v1/")
-@CrossOrigin("*")
 @RequiredArgsConstructor
 public class LoginController {
 
     private final CustomersService customerService;
     private final CustomerMapper customerMapper;
+
+    @GetMapping("user")
+    public CustomerDto handleGetCustomer(Authentication authentication){
+        Customer customer = customerService.findByEmail(authentication.getName()).get();
+        CustomerDto dto = customerMapper.pojoToDto(customer);
+        System.out.println(customer.toString());
+        return dto;
+    }
 
     @PostMapping("sign-up")
     public ResponseEntity<String> handleRegisterNewUser(@Validated @RequestBody CustomerDto customerDto) {

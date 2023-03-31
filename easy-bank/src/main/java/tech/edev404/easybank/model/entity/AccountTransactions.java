@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,7 +22,8 @@ import lombok.NoArgsConstructor;
 @Table(name="account_transactions")
 public class AccountTransactions {
 
-  @Column(name = "transaction_id")
+	@Id
+  	@Column(name = "transaction_id")
 	private String transactionId;
 	
 	@Column(name="account_number")
