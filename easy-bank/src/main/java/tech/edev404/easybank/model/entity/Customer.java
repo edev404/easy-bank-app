@@ -32,25 +32,37 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Integer id;
+
+    private String name;
+    
     @Column(unique = true, nullable = false, length = 100)
     private String email;
+
     @Column(nullable = false)
     private String password;
+
     @Column(unique = true, nullable = false, length = 15)
     private String mobileNumber;
+
     @ColumnDefault(value = "true")
     private Boolean enabled;
+
     @ColumnDefault(value = "true")
     private Boolean accountNonLocked;
+
     @ColumnDefault(value = "true")
     private Boolean credentialsNonExpired;
+
     @ColumnDefault(value = "true")
     private Boolean accountNonExpired;
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-	  private RoleEnum authority;
+	private RoleEnum authority;
+
     @CreationTimestamp
     private LocalDateTime creationDateTime;
+    
     @UpdateTimestamp
     private LocalDateTime lastModified;
 

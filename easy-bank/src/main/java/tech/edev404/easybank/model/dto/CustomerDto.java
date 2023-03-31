@@ -24,6 +24,10 @@ public class CustomerDto {
     @Null
     private Integer id;
 
+    @JsonProperty(value = "name", required = true)
+    @NotEmpty
+    private String name;
+
     @JsonProperty(value = "email", required = true)
     @NotEmpty @Email
     private String email;

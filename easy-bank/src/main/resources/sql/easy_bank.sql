@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `customers` (
   `customer_id` int NOT NULL,
   `email` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `mobileNumber` varchar(15) NOT NULL,
   `password` varchar(255) NOT NULL,
   `authority` varchar(255) NOT NULL,
@@ -45,8 +46,8 @@ CREATE TABLE `customers` (
 -- Volcado de datos para la tabla `customers`
 --
 
-INSERT INTO `customers` (`customer_id`, `accountNonExpired`, `accountNonLocked`, `authority`, `creationDateTime`, `credentialsNonExpired`, `email`, `enabled`, `lastModified`, `mobileNumber`, `password`) VALUES
-(1, b'1', b'1', 'admin', '2023-03-28 10:38:55.486724', b'1', 'admin@outlook.com', b'0', '2023-03-28 10:38:55.488139', '3012116105', '$2a$10$/XreirBGRWXARtSH7AqHIOxDf2vNMTCXDCi6nBL3/h349foK8WQxe');
+INSERT INTO `customers` (`customer_id`, `accountNonExpired`, `accountNonLocked`, `authority`, `creationDateTime`, `credentialsNonExpired`, `email`, `enabled`, `lastModified`, `mobileNumber`, `password`, `name`) VALUES
+(1, b'1', b'1', 'admin', '2023-03-28 10:38:55.486724', b'1', 'admin@outlook.com', b'1', '2023-03-28 10:38:55.488139', '3012116105', '$2a$10$/XreirBGRWXARtSH7AqHIOxDf2vNMTCXDCi6nBL3/h349foK8WQxe', 'admin');
 
 --
 -- Índices para tablas volcadas
