@@ -18,6 +18,7 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto>{
     public Customer dtoToPojo(CustomerDto dto) {
         return Customer.builder()
         .email(dto.getEmail())
+        .name(dto.getName())
         .password(passwordEncoder.encode(dto.getPassword()))
         .authority(RoleEnum.valueOf(dto.getRole()))
         .mobileNumber(dto.getMobileNumber())
@@ -31,7 +32,9 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto>{
     @Override
     public CustomerDto pojoToDto(Customer pojo) {
         return CustomerDto.builder()
+        .id(pojo.getId())
         .email(pojo.getEmail())
+        .name(pojo.getName())
         .password(pojo.getPassword())
         .mobileNumber(pojo.getMobileNumber())
         .role(pojo.getAuthority().toString())

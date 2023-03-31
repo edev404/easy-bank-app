@@ -21,6 +21,7 @@ export class BalanceComponent implements OnInit {
       this.dashboardService.getAccountTransactions(this.user.id).subscribe(
         responseData => {
         this.transactions = <any> responseData.body;
+        console.log(responseData.body)
         });
     }
   }

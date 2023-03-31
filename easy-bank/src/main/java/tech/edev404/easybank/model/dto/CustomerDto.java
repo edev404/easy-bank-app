@@ -20,8 +20,7 @@ import lombok.NoArgsConstructor;
 @JsonPropertyOrder({"id", "email", "password", "mobileNumber"})
 public class CustomerDto {
 
-    @JsonProperty(value = "id", required = false) 
-    @Null
+    @JsonProperty(value = "id", required = false)
     private Integer id;
 
     @JsonProperty(value = "name", required = true)
